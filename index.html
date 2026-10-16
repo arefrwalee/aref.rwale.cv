@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aref Rwale CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one calm column under a navy name band, language switch on top; Arabic first, English one tap away. */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --band: #1b2a41;
+  --band-ink: #f3f6fb;
+  --band-muted: #b8c4d6;
+  --ink: #1b2a41;
+  --body: #2e3749;
+  --muted: #5b667a;
+  --line: #dde2ea;
+  --accent: #4a5f7a;
+  --pill-bg: #2b3d57;
+  --pill-ink: #ffffff;
+  --soft: #eef1f6;
+  --font-ar: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-en: 'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1520; --surface: #151f2e; --band: #0a101a; --band-ink: #eef2f8; --band-muted: #9eaec6;
+    --ink: #e9eef6; --body: #cdd6e3; --muted: #93a1b8; --line: #243248; --accent: #9db0cc;
+    --pill-bg: #2a3c58; --pill-ink: #f2f5fa; --soft: #1b2738; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1520; --surface: #151f2e; --band: #0a101a; --band-ink: #eef2f8; --band-muted: #9eaec6;
+  --ink: #e9eef6; --body: #cdd6e3; --muted: #93a1b8; --line: #243248; --accent: #9db0cc;
+  --pill-bg: #2a3c58; --pill-ink: #f2f5fa; --soft: #1b2738; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--body); font-family: var(--font-en); font-size: 16px; line-height: 1.65; }
+[lang="ar"] { font-family: var(--font-ar); }
+[lang="en"] { font-family: var(--font-en); }
+.wrap { max-width: 920px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.switch { background: var(--band); border-bottom: 1px solid rgba(255,255,255,.08); }
+.switch .wrap { display: flex; justify-content: flex-end; gap: 4px; padding-block: 10px; }
+.switch button { font: inherit; font-size: 14px; font-weight: 600; color: var(--band-muted); background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 6px 14px; cursor: pointer; min-height: 36px; }
+.switch button[aria-pressed="true"] { color: var(--band-ink); border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08); }
+.switch button:focus-visible { outline: 2px solid var(--band-ink); outline-offset: 2px; }
+.hero { background: var(--band); color: var(--band-ink); }
+.hero .wrap { padding-block: 40px 36px; }
+.hero h1 { margin: 0 0 22px; font-size: clamp(34px, 7vw, 54px); line-height: 1.12; font-weight: 700; letter-spacing: -.01em; text-wrap: balance; }
+[lang="ar"] .hero h1 { letter-spacing: 0; line-height: 1.3; }
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 28px; margin: 0; padding: 0; list-style: none; }
+.contact li { min-width: 0; overflow-wrap: anywhere; font-size: 15px; }
+.contact small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--band-muted); margin-bottom: 2px; }
+[lang="ar"] .contact small { letter-spacing: 0; text-transform: none; font-size: 13px; }
+main .wrap { padding-block: 36px 56px; display: grid; gap: 40px; }
+section { min-width: 0; }
+h2 { margin: 0 0 16px; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 14px; }
+h2::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+[lang="ar"] h2 { letter-spacing: 0; text-transform: none; font-size: 16px; }
+.summary { margin: 0; font-size: 17px; line-height: 1.8; color: var(--ink); max-width: 68ch; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 12px; text-align: center; }
+.stat b { display: block; font-size: 26px; line-height: 1.1; color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat span { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+.jobs { display: grid; gap: 28px; }
+.job { position: relative; padding-inline-start: 24px; border-inline-start: 2px solid var(--line); }
+.job::before { content: ''; position: absolute; inset-inline-start: -6px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.job-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.role { margin: 0; font-size: 19px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.dur { font-size: 13px; font-weight: 600; background: var(--pill-bg); color: var(--pill-ink); padding: 2px 12px; border-radius: 999px; white-space: nowrap; }
+.org { margin: 2px 0 8px; font-size: 15px; font-weight: 600; color: var(--accent); }
+.job p { margin: 0; }
+.job ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.job li { position: relative; padding-inline-start: 18px; }
+.job li::before { content: ''; position: absolute; inset-inline-start: 0; top: .8em; width: 8px; height: 2px; background: var(--accent); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 36px 40px; }
+.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.list li { position: relative; padding-inline-start: 18px; font-size: 15px; line-height: 1.55; }
+.list li::before { content: ''; position: absolute; inset-inline-start: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.edu { background: var(--surface); border: 1px solid var(--line); border-inline-start: 3px solid var(--accent); border-radius: 6px; padding: 16px 18px; }
+.edu b { display: block; font-size: 18px; color: var(--ink); font-weight: 600; }
+.edu span { display: block; font-size: 15px; color: var(--muted); }
+.edu em { font-style: normal; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.refs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.ref { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; min-width: 0; overflow-wrap: anywhere; }
+.ref b { display: block; color: var(--ink); font-weight: 600; }
+.ref span { display: block; font-size: 14px; color: var(--muted); }
+[hidden] { display: none !important; }
+@media (max-width: 520px) { .stat b { font-size: 22px; } .hero .wrap { padding-block: 32px 28px; } }
+@media (prefers-reduced-motion: no-preference) { .job, .stat { transition: none; } }
+.switch .wrap { align-items: center; } .switch a.pdf { margin-inline-end: auto; margin-right: auto; color: var(--band-muted); font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.3); padding: 2px 0; } .switch a.pdf:hover { color: var(--band-ink); }
+</style>
+</head>
+<body>
+<nav class="switch" aria-label="Language"><div class="wrap">
+  <a class="pdf" href="Aref_Rwale_CV.pdf" download>تحميل PDF · Download PDF</a>
+  <button id="btn-ar" type="button" aria-pressed="true">العربية</button>
+  <button id="btn-en" type="button" aria-pressed="false">English</button>
+</div></nav>
+
+<div id="cv-ar" lang="ar" dir="rtl">
+  <header class="hero"><div class="wrap"><h1>عارف محمد روال</h1><ul class="contact"><li><small>البريد الإلكتروني</small>aref.rwale@gmail.com</li><li><small>الهاتف</small><span dir='ltr'>0988 169 594</span></li><li><small>الموقع</small>أريحا، إدلب، شمال سوريا</li><li><small>فيسبوك</small><span dir='ltr'>facebook.com/aref.rwalee</span></li></ul></div></header>
+  <main><div class="wrap">
+    <section><h2>لمحة مهنية</h2><p class="summary">مهندس ميكانيك بخبرة ميدانية تزيد على أربع سنوات ونصف مع منظمات إنسانية وهندسية في شمال سوريا، بما فيها قيادة فريق المراقبة والتقييم. خبرة في متابعة سير العمل والتوثيق وإعداد التقارير الدورية وجمع البيانات، والعمل مع المجالس المحلية والمجتمعات. حاصل على تدريب متخصص في إدارة المشاريع وتخطيطها وإدارة الموارد البشرية.</p><div class="stats"><div class='stat'><b>+800</b><span>متدرّب</span></div><div class='stat'><b>+4.5</b><span>سنوات خبرة</span></div><div class='stat'><b>4</b><span>جهات عمل</span></div></div></section>
+    <section><h2>الخبرة العملية</h2><div class="jobs"><article class='job'><div class='job-top'><h3 class='role'>مسؤول مراقبة وتقييم (MEAL) وقائد فريق</h3><span class='dur'>حوالي 8 أشهر</span></div><div class='org'>منظمة PDC</div><ul><li>قيادة فريق المراقبة والتقييم.</li><li>توثيق جميع أنشطة المشاريع وإعداد التقارير اليومية ورفعها.</li><li>إجراء مسوحات ميدانية عبر تطبيق KoboToolbox، ومقابلات معمّقة ومجموعات مركزة.</li></ul></article><article class='job'><div class='job-top'><h3 class='role'>مهندس إصحاح (WASH)</h3><span class='dur'>حوالي سنة</span></div><div class='org'>منظمة PDC</div><p>عمل هندسي ميداني لدعم أنشطة مشاريع المياه والإصحاح.</p></article><article class='job'><div class='job-top'><h3 class='role'>مهندس تنفيذ</h3><span class='dur'>حوالي سنة</span></div><div class='org'>شركة إيليت للأعمال الهندسية</div><p>مراقبة ومتابعة وتوثيق أعمال ترميم المنازل، من الهدم والبناء وحتى التجهيز والتسليم للمستفيدين.</p></article><article class='job'><div class='job-top'><h3 class='role'>باحث ميداني</h3><span class='dur'>حوالي 8 أشهر</span></div><div class='org'>منظمة NRC</div><p>إجراء المسوحات والمقابلات المعمّقة والنقاشات الجماعية المركزة لتقييم الاحتياجات الأساسية في معظم مخيمات شمال سوريا.</p></article><article class='job'><div class='job-top'><h3 class='role'>مدرّب كمبيوتر</h3><span class='dur'>سنة وشهران</span></div><div class='org'>منظمة SHAR</div><p>دربت أكثر من 800 شخص في معظم المجالس المحلية العاملة في مدينة إدلب لتطوير مهاراتهم وقدراتهم في التعامل مع الكمبيوتر.</p></article></div></section>
+    <div class="cols">
+      <section><h2>المهارات الأساسية</h2><ul class="list"><li>إعداد التقارير وجمع البيانات (KoboToolbox)</li><li>المراقبة والتقييم والمساءلة والتعلّم (MEAL)</li><li>قيادة الفريق والتنسيق</li><li>تخطيط المشاريع (MS Project)</li><li>متابعة وتوثيق سير العمل</li><li>المقابلات (KII) والمجموعات المركزة (FGD)</li><li>التدريب وبناء القدرات</li><li>مايكروسوفت أوفيس</li></ul></section>
+      <div style="display:grid;gap:36px;align-content:start">
+        <section><h2>اللغات</h2><ul class="list"><li>العربية: لغة أم</li><li>الإنجليزية: ممتاز</li></ul></section>
+        <section><h2>معلومات إضافية</h2><ul class="list"><li>رخصة قيادة: خاصة</li></ul></section>
+      </div>
+    </div>
+    <section><h2>الدورات التدريبية</h2><ul class="list"><li>إدارة المشاريع وكتابة مقترحات التمويل · أكاديمية ABChorizon</li><li>تخطيط المشاريع ببرنامج Microsoft Project · أكاديمية ABChorizon</li><li>المراقبة والتقييم · Online Academy</li><li>إدارة الموارد البشرية · Online Academy</li><li>تدريب المدربين TOT · منظمة SHAR</li></ul></section>
+    <section><h2>التعليم</h2><div class="edu"><b>بكالوريوس في الهندسة الميكانيكية</b><span>قسم الآلات الزراعية</span><span>جامعة حلب &middot; <em>2006 – 2026</em></span></div></section>
+    <section><h2>المراجع</h2><div class="refs"><div class='ref'><b>م. نجم الدين الغنوم</b><span>المدير التنفيذي لأكاديمية ABChorizon</span><span dir='ltr' style='text-align:start'>forsuccess@gmail.com</span></div><div class='ref'><b>م. أحمد صيادي</b><span>منسّق المراقبة والتقييم في منظمة PDC</span><span dir='ltr' style='text-align:start'>ahmadsayadi09@gmail.com</span></div></div></section>
+  </div></main>
+</div>
+
+<div id="cv-en" lang="en" dir="ltr" hidden>
+  <header class="hero"><div class="wrap"><h1>Aref Rwale</h1><ul class="contact"><li><small>Email</small>aref.rwale@gmail.com</li><li><small>Phone</small>0988 169 594</li><li><small>Location</small>Ariha, Idlib, Northern Syria</li><li><small>Facebook</small>facebook.com/aref.rwalee</li></ul></div></header>
+  <main><div class="wrap">
+    <section><h2>Professional Summary</h2><p class="summary">Mechanical engineer with over four and a half years of field experience with humanitarian and engineering organizations in Northern Syria, including leading a monitoring and evaluation team. Skilled in following up work progress, documentation, periodic reporting and data collection, and in working with local councils and communities. Formally trained in project management, project planning and human resources management.</p><div class="stats"><div class='stat'><b>800+</b><span>people trained</span></div><div class='stat'><b>4.5+</b><span>years of experience</span></div><div class='stat'><b>4</b><span>organizations</span></div></div></section>
+    <section><h2>Professional Experience</h2><div class="jobs"><article class='job'><div class='job-top'><h3 class='role'>MEAL Officer &amp; Team Leader</h3><span class='dur'>~8 months</span></div><div class='org'>PDC Organization</div><ul><li>Led the monitoring and evaluation team.</li><li>Documented all project activities and prepared and submitted daily reports.</li><li>Conducted field surveys with KoboToolbox, in-depth interviews and focus group discussions.</li></ul></article><article class='job'><div class='job-top'><h3 class='role'>WASH Engineer</h3><span class='dur'>~1 year</span></div><div class='org'>PDC Organization</div><p>Field engineering role supporting WASH project activities.</p></article><article class='job'><div class='job-top'><h3 class='role'>Implementation Engineer</h3><span class='dur'>~1 year</span></div><div class='org'>Elite Engineering Works Company</div><p>Monitored and followed up implementation and documentation of house restoration activities, from demolition and construction to finishing and handover to beneficiaries.</p></article><article class='job'><div class='job-top'><h3 class='role'>Field Researcher</h3><span class='dur'>~8 months</span></div><div class='org'>NRC Organization</div><p>Conducted surveys, in-depth interviews and focus group discussions to assess the basic needs of residents in most camps across Northern Syria.</p></article><article class='job'><div class='job-top'><h3 class='role'>Computer Trainer</h3><span class='dur'>1 year 2 months</span></div><div class='org'>SHAR Organization</div><p>Trained more than 800 people across most local councils in Idlib City to build their computer skills and capacity.</p></article></div></section>
+    <div class="cols">
+      <section><h2>Core Skills</h2><ul class="list"><li>Reporting &amp; data collection (KoboToolbox)</li><li>Monitoring, Evaluation, Accountability &amp; Learning (MEAL)</li><li>Team leadership &amp; coordination</li><li>Project planning (MS Project)</li><li>Follow-up &amp; documentation of work progress</li><li>Interviewing: KII &amp; FGD</li><li>Training &amp; capacity building</li><li>Microsoft Office</li></ul></section>
+      <div style="display:grid;gap:36px;align-content:start">
+        <section><h2>Languages</h2><ul class="list"><li>Arabic: Native</li><li>English: Excellent</li></ul></section>
+        <section><h2>Additional</h2><ul class="list"><li>Driving license: Private</li></ul></section>
+      </div>
+    </div>
+    <section><h2>Training Courses</h2><ul class="list"><li>Project Management &amp; Funding Proposal Writing · ABChorizon Academy</li><li>Projects Planning with Microsoft Project · ABChorizon Academy</li><li>Monitoring &amp; Evaluation · Online Academy</li><li>Human Resources Management · Online Academy</li><li>Training of Trainers (TOT) · SHAR Organization</li></ul></section>
+    <section><h2>Education</h2><div class="edu"><b>Bachelor's Degree in Mechanical Engineering</b><span>Department of Agricultural Mechanization</span><span>University of Aleppo &middot; <em>2006 &ndash; 2026</em></span></div></section>
+    <section><h2>Referees</h2><div class="refs"><div class='ref'><b>Najm Alden Alganoum</b><span>Executive Director, ABChorizon Academy</span><span dir='ltr' style='text-align:start'>forsuccess@gmail.com</span></div><div class='ref'><b>Ahmad Sayadi</b><span>M&amp;E Coordinator, PDC Organization</span><span dir='ltr' style='text-align:start'>ahmadsayadi09@gmail.com</span></div></div></section>
+  </div></main>
+</div>
+<script>
+(function () {
+  var langs = ['ar', 'en'];
+  function show(l) {
+    langs.forEach(function (x) {
+      document.getElementById('cv-' + x).hidden = (x !== l);
+      var b = document.getElementById('btn-' + x);
+      if (b) b.setAttribute('aria-pressed', x === l ? 'true' : 'false');
+    });
+    document.title = l === 'ar' ? 'عارف محمد روال | السيرة الذاتية' : 'Aref Rwale CV';
+    try { localStorage.setItem('cv-lang', l); } catch (e) {}
+  }
+  var start = 'ar';
+  var h = (location.hash || '').replace('#', '');
+  if (langs.indexOf(h) > -1) { start = h; }
+  else { try { var s = localStorage.getItem('cv-lang'); if (langs.indexOf(s) > -1) start = s; } catch (e) {} }
+  langs.forEach(function (x) {
+    document.getElementById('btn-' + x).addEventListener('click', function () { show(x); });
+  });
+  show(start);
+})();
+</script>
+</body>
+</html>
